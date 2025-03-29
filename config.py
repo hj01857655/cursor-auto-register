@@ -24,7 +24,7 @@ API_WORKERS = int(os.getenv("API_WORKERS", 1))
 
 # ===== 账号管理配置 =====
 # 系统最大已激活的账号数量
-MAX_ACCOUNTS = int(os.getenv("MAX_ACCOUNTS", 10))
+MAX_ACCOUNTS = int(os.getenv("MAX_ACCOUNTS", 20))
 # 每次注册间隔时间(秒)
 REGISTRATION_INTERVAL = int(os.getenv("REGISTRATION_INTERVAL", 60))
 # 注册失败时的最大重试次数

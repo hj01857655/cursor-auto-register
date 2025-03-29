@@ -15,7 +15,7 @@ from config import (
     EMAIL_CODE_TYPE
 )
 
-
+# 邮箱验证码获取器
 class EmailVerificationHandler:
     def __init__(self, username=None, domain=None, pin=None):
         self.email = EMAIL_TYPE
@@ -33,6 +33,7 @@ class EmailVerificationHandler:
             info(
                 f"初始化邮箱验证器成功: {self.emailApi}"
             )
+    # 检查邮箱是否存在
     def check(self):
         mail_list_url = f"https://tempmail.plus/api/mails?email={self.username}{self.emailExtension}&limit=20&epin={self.pin}"
         try:
@@ -48,7 +49,7 @@ class EmailVerificationHandler:
         except Exception as e:
             error(f"获取邮件列表发生错误: {str(e)}")
         return False
-
+    # 获取验证码
     def get_verification_code(
         self, source_email=None, max_retries=None, wait_time=None
     ):
